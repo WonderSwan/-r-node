@@ -3,12 +3,13 @@ var app = express();
 var http = require( 'http' );
 var bot = require ( './lib/bot' );
 
+// call reddit bot every hour
 setInterval(function(){
   bot();
 }, 3600000); // one hour
 
 // keep the app from falling asleep
-if ( 'production' === app.get( 'env' ) ){
+if ( 'production' === process.env.NODE_ENV ){
   setInterval(function() {
     http.get('http://rnode.herokuapp.com');
   }, 300000); // ping the app every five minutes

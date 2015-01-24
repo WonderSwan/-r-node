@@ -8,6 +8,9 @@ setInterval(function(){
   bot();
 }, 3600000); // one hour
 
+// run it on start up also
+bot();
+
 // keep the app from falling asleep
 if ( 'production' === process.env.NODE_ENV ){
   setInterval(function() {

@@ -6,7 +6,7 @@ var bot = require ( './lib/bot' );
 // call reddit bot every hour
 setInterval(function(){
   bot();
-}, 3600000); // one hour
+}, 3600000 * 2); // two hours
 
 // run it on start up also
 bot();
